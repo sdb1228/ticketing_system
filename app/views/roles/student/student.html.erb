@@ -1,0 +1,7 @@
+<%= form_tag('/ticket/student') do %>
+	<%= link_to "Home", controller: "ticket", action:"index"%>
+	<br><br>
+	<%= text_field_tag 'subject', nil, :class => 'subject', :placeholder => 'Subject', :required => true %>
+	<%= text_area_tag 'description', nil, :class => 'description', :placeholder => 'Description', :required => true %>
+	<%= submit_tag "Save Ticket", :class => 'submit' %>
+<% end %>

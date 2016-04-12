@@ -1,0 +1,20 @@
+default: &default
+  tool_title: 'Ticketing System'
+  tool_description: 'An app that lets ticket problems'
+  tool_id: 'ticket_system'
+  privacy_level: 'public'
+  account_navigation:
+    text: 'Ticketing System'
+    visibility: 'public'
+  course_navigation:
+    text: 'Ticketing System'
+    visibility: 'public'
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

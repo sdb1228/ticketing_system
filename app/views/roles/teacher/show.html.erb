@@ -1,0 +1,37 @@
+<div id="assignment_show" class="assignment content_underline_links">
+  <%= form_tag('/ticket/update') do %>
+  <%= link_to "Home", controller: "ticket", action:"teacher_index"%>
+    <h1 class="title">
+      <%= @subject %>
+    </h1>
+    <ul class="student-assignment-overview">
+      <li class="li-show">
+        <span class="title1">Status</span>
+        <%= select_tag("status",options_for_select([ "Open", "In Progress", "Closed" ], @status),  class: 'status') %>
+      </li>
+      <li class="li-show">
+        <span class="title1">Assigned To</span>
+        <span><%= select_tag("assignee",options_for_select(@teachersHash, @assignee),  class: 'status') %></span>
+      </li>
+        <li class="li-show">
+          <span class="title1">Created At</span>
+          <span><%= local_time(@createdAt) %></span>
+        </li>
+        <li class="li-show">
+          <span class="title1">Updated At</span>
+          <span><%= local_time(@updatedAt) %></span>
+        </li>
+    </ul>
+  <%= hidden_field_tag("id", @ticket.id) %>
+  <div class="description-show"><%= @description %></div>
+  <div class="div">
+  <br><br>
+    <%= submit_tag "Save Ticket", :class => 'submit' %>
+  <% end %>
+  </div>
+</div>
+
+
+
+
+

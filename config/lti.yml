@@ -1,0 +1,13 @@
+default: &default
+  key: fav_student_key
+  secret: fav_student_secret
+  require_canvas: true
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

@@ -1,0 +1,36 @@
+<div id="assignment_show" class="assignment content_underline_links">
+  <%= link_to "Home", controller: "ticket", action:"index"%>
+    <h1 class="title">
+      <%= @subject %>
+    </h1>
+    <ul class="student-assignment-overview">
+      <li class="li-show">
+        <span class="title1">Status</span>
+        <span class="value">
+          <%= @status %>
+        </span>
+      </li>
+      <li class="li-show">
+        <span class="title1">Assigned To</span>
+        <span><%= @assignee %></span>
+      </li>
+        <li class="li-show">
+          <span class="title1">Created At</span>
+          <span><%= local_time(@createdAt) %></span>
+        </li>
+        <li class="li-show">
+          <span class="title1">Updated At</span>
+          <span><%= local_time(@updatedAt) %></span>
+        </li>
+    </ul>
+
+  <div class="description-show"><%= @description %></div>
+  <div class="div">
+    <%= button_to "+ Ticket", {action: "new"}, class: "submit" %>
+  </div>
+</div>
+
+
+
+
+

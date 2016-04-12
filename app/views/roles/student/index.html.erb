@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+  </script>
+</head>
+<div style="margin-bottom: 20px; margin-top: 20px;">
+  <%= link_to "Ticket +", {controller: "ticket", action:"new"}, class: "link"%>
+</div>
+<body>
+<div id="accordion">
+  <h3>Open</h3>
+  <div>
+    <ul>
+      <% @open.each do |s| %>
+        <li><%= link_to s['subject'], controller: "ticket", action:"show", ticket: s %></li>
+      <% end %>
+    </ul>
+  </div>
+  <h3>In Progress</h3>
+  <div>
+    <ul>
+      <% @inProgress.each do |s| %>
+        <li><%= link_to s['subject'], controller: "ticket", action:"show", ticket: s%></li>
+      <% end %>
+    </ul>
+  </div>
+  <h3>Closed</h3>
+  <div>
+    <ul>
+      <% @closed.each do |s| %>
+        <li><%= link_to s['subject'], controller: "ticket", action:"show", ticket: s%></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
